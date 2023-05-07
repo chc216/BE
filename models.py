@@ -1,12 +1,12 @@
-from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy import Column, Integer, VARCHAR, DateTime
 
-from .database import Base
+from.database import Base
 
-class test(Base):
+class Test(Base):
     __tablename__ = "test"
     geo_id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     x = Column(Integer)
     y = Column(Integer)
-    created_at = (Date)
-    storage_URL = (String(500))
-    comment = (String(500))
+    created_at = (DateTime)
+    storage_URL = (VARCHAR(500))
+    comment = (VARCHAR(500))
