@@ -4,13 +4,7 @@ from sqlalchemy import create_engine
 import json
 import os
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-SECRET_FILE = os.path.join(BASE_DIR, 'secrets.json')
-secrets = json.loads(open(SECRET_FILE).read())
-DB = secrets["DB"]
-
-DB_URL = f"mysql+pymysql://{DB['user']}:{DB['password']}@{DB['host']}:{DB['port']}/{DB['database']}"
+DB_URL = "mysql+pymysql://root:1234@localhost:3306/cat_mom"
 
 engine = create_engine(DB_URL)
 
